@@ -3,6 +3,12 @@ p {
   font-family: Lato;
 }
 
+.carousel-main {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 .card-layout {
   width: 408px;
   height: 573px;

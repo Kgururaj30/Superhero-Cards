@@ -4,7 +4,6 @@ import CarouselSubCardDetails from './CarouselSubCardDetails';
 export default ({ id, data = {}, activeId }) => {
   const { biography = {}, powerstats = {} } = data;
   const { publisher } = biography;
-  console.log(!!data.response);
   return (
     <div
       className={
@@ -27,6 +26,7 @@ export default ({ id, data = {}, activeId }) => {
             className="superhero-image"
             src={data && data.image && data.image.url}
           />
+
           <div className="card-details">
             <p className="card-details-info superhero-heaading">
               {data && data.name}

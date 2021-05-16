@@ -9,7 +9,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'React',
       superHeroData: {},
       activeId: 1,
       //carousel for 5 items inititally
@@ -45,7 +44,6 @@ class App extends Component {
   //     )
   //       .then(response => response.json())
   //       .then(res => {
-  //         //console.log(res);
   //         this.setState(prevState => ({
   //           superHeroData: {
   //             ...prevState.superHeroData,
@@ -78,19 +76,12 @@ class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          display: 'flex',
-          'justify-content': 'center',
-          'margin-top': '40px'
-        }}
-      >
+      <div className="carousel-main">
         <div className="oval" onClick={this.prevImg}>
           {'<'}
         </div>
         <div style={{ display: 'flex', 'justify-content': 'center' }}>
           {this.state.superHeroInitialIds.map((id, val) => {
-            console.log(this.state.superHeroData[id]);
             if (
               id - this.state.activeId == 1 ||
               id - this.state.activeId == -1 ||
