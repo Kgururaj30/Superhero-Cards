@@ -19,28 +19,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    //initially fetching data for id:1
-    fetch('https://www.superheroapi.com/api.php/4301596443225455/1')
-      .then(response => response.json())
-      .then(res => {
-        //console.log(res);
-        this.setState(prevState => ({
-          superHeroData: {
-            ...prevState.superHeroData,
-            [res.id]: res
-          },
-          activeId: 1
-        }));
-      });
-  }
-
-  componentDidUpdate() {
-    if (!this.state.superHeroData[this.state.activeId]) {
-      fetch(
-        `https://www.superheroapi.com/api.php/4301596443225455/${
-          this.state.activeId
-        }`
-      )
+    //initially fetching all data
+    this.state.superHeroInitialIds.map(item => {
+      fetch(`https://www.superheroapi.com/api.php/4301596443225455/${item}`)
         .then(response => response.json())
         .then(res => {
           //console.log(res);
@@ -48,11 +29,32 @@ class App extends Component {
             superHeroData: {
               ...prevState.superHeroData,
               [res.id]: res
-            }
+            },
+            activeId: 1
           }));
         });
-    }
+    });
   }
+
+  // componentDidUpdate() {
+  //   if (!this.state.superHeroData[this.state.activeId]) {
+  //     fetch(
+  //       `https://www.superheroapi.com/api.php/4301596443225455/${
+  //         this.state.activeId
+  //       }`
+  //     )
+  //       .then(response => response.json())
+  //       .then(res => {
+  //         //console.log(res);
+  //         this.setState(prevState => ({
+  //           superHeroData: {
+  //             ...prevState.superHeroData,
+  //             [res.id]: res
+  //           }
+  //         }));
+  //       });
+  //   }
+  // }
 
   nextImg() {
     if (this.state.activeId >= this.state.superHeroInitialIds.length) {
@@ -75,26 +77,38 @@ class App extends Component {
   }
 
   render() {
-    //console.log(this.state.superHeroData);
-
     return (
-      <div style={{ display: 'flex', 'justify-content': 'center' }}>
+      <div
+        style={{
+          display: 'flex',
+          'justify-content': 'center',
+          'margin-top': '40px'
+        }}
+      >
         <div className="oval" onClick={this.prevImg}>
-          Previous
+          {'<'}
         </div>
-        {this.state.superHeroInitialIds.map((id, val) => {
-          console.log(this.state.superHeroData[id]);
-          return (
-            <CarouselCard
-              activeId={this.state.activeId}
-              key={val}
-              id={id}
-              data={this.state.superHeroData[id]}
-            />
-          );
-        })}
+        <div style={{ display: 'flex', 'justify-content': 'center' }}>
+          {this.state.superHeroInitialIds.map((id, val) => {
+            console.log(this.state.superHeroData[id]);
+            if (
+              id - this.state.activeId == 1 ||
+              id - this.state.activeId == -1 ||
+              id - this.state.activeId == 0
+            ) {
+              return (
+                <CarouselCard
+                  activeId={this.state.activeId}
+                  key={val}
+                  id={id}
+                  data={this.state.superHeroData[id]}
+                />
+              );
+            } else return null;
+          })}
+        </div>
         <div className="oval" onClick={this.nextImg}>
-          Next
+          {'>'}
         </div>
       </div>
     );

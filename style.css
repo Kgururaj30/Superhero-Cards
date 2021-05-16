@@ -15,15 +15,15 @@ p {
 }
 
 /* Not working below code */
-/* .blur-card:first-child{
-  margin-right:-40px;
-  margin-top:-30px;
+.blur-card:first-child {
+  margin-right: -40px;
+  margin-top: -30px;
 }
 
 .blur-card:last-child {
-  margin-left:-40px;
-  margin-top:-30px;
-} */
+  margin-left: -40px;
+  margin-top: -30px;
+}
 
 .blur-card {
   opacity: 0.3;
@@ -37,9 +37,9 @@ p {
   z-index: 5;
 }
 
-.superhero-image{
-  width:388px;
-  height:573px;
+.superhero-image {
+  width: 388px;
+  height: 573px;
   margin: 0 10px;
 }
 
@@ -70,7 +70,7 @@ p {
   color: #3b3e3f;
 }
 
-.card-details p b{
+.card-details p b {
   font-size: 14px;
 }
 
@@ -84,7 +84,7 @@ p {
   width: 388px;
 }
 
-.oval{
+.oval {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,4 +100,6 @@ p {
   background-image: linear-gradient(172deg, #00a1d2 11%, #03bbf3 122%);
   color: white;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 38px;
 }
