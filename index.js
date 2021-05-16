@@ -24,7 +24,6 @@ class App extends Component {
       fetch(`https://www.superheroapi.com/api.php/4301596443225455/${item}`)
         .then(response => response.json())
         .then(res => {
-          //console.log(res);
           this.setState(prevState => ({
             superHeroData: {
               ...prevState.superHeroData,
@@ -36,6 +35,7 @@ class App extends Component {
     });
   }
 
+  //Commented below code if need to fetch one by 1 card info
   // componentDidUpdate() {
   //   if (!this.state.superHeroData[this.state.activeId]) {
   //     fetch(

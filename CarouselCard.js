@@ -1,9 +1,7 @@
 import React, { Fragment } from 'react';
 import CarouselSubCardDetails from './CarouselSubCardDetails';
-// import Loader from 'react-loader';
 
 export default ({ id, data = {}, activeId }) => {
-  //console.log(data);
   const { biography = {}, powerstats = {} } = data;
   const { publisher } = biography;
   console.log(!!data.response);
