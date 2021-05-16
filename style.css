@@ -1,0 +1,103 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.card-layout {
+  width: 408px;
+  height: 573px;
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 17px 50px -10px rgba(1, 33, 78, 0.19);
+  border: solid 1px #f1f5fa;
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* Not working below code */
+/* .blur-card:first-child{
+  margin-right:-40px;
+  margin-top:-30px;
+}
+
+.blur-card:last-child {
+  margin-left:-40px;
+  margin-top:-30px;
+} */
+
+.blur-card {
+  opacity: 0.3;
+}
+
+.inactiveCard {
+  display: none;
+}
+
+.activeCard {
+  z-index: 5;
+}
+
+.superhero-image{
+  width:388px;
+  height:573px;
+  margin: 0 10px;
+}
+
+.card-details {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #3b3e3f;
+  bottom: 0;
+  left: 0;
+  font-size: 17px;
+  z-index: 5;
+  margin: 0 10px;
+  height: 300px;
+}
+
+.card-details .superhero-heaading {
+  font-size: 30px;
+}
+
+.card-details p {
+  font-family: OpenSans;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 0.8px;
+  color: #3b3e3f;
+}
+
+.card-details p b{
+  font-size: 14px;
+}
+
+.card-details-info {
+  margin-left: 40px;
+}
+
+.card-sub-details {
+  display: flex;
+  justify-content: space-around;
+  width: 388px;
+}
+
+.oval{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  margin-top: 265px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 10px 11px 10px 9px;
+  border: solid 1px #00a1d2;
+  background-color: #ffffff;
+  border-radius: 50%;
+  background-image: linear-gradient(172deg, #00a1d2 11%, #03bbf3 122%);
+  color: white;
+  cursor: pointer;
+}
